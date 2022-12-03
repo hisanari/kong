@@ -1,6 +1,22 @@
 _format_version: "3.0"
 _transform: true
 
+plugins:
+- name: proxy-cache
+  service: 81ba8d91-97b4-595e-b3e2-a405f951b320
+  config: 
+    response_code:
+    - 200
+    request_method:
+    - GET
+    - HEAD
+    content_type:
+    - text/plain
+    - application/json
+    - text/html
+    cache_ttl: 300
+    strategy: memory
+
 services:
 - name: example_service
   url: http://mockbin.org
