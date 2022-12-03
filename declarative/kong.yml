@@ -1,0 +1,17 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+- name: example_service
+  url: http://mockbin.org
+  routes:
+  - name: example_route
+    paths:
+    - /mock
+    strip_path: true
+- name: go_app
+  url: http://go_app:8080
+  routes: 
+  - name: go_app_route
+    paths:
+    - /go
